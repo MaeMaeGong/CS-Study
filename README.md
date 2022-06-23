@@ -19,8 +19,8 @@
 ## 📚 Study Schedule
 | Subject | 김경훈 | 김민수 | 김병훈 | 송진호 | 최종 |
 |:-------:|:---:|:---:|:---:|:---:|:---:|
-|Java|  |  |  | ✍ |  |
-|Spring|  |  |  | ✍ |  |
+|Java|  |  |  | [✍](https://github.com/MaeMaeGong/CS-Study/tree/main/StudyRecords/JH/Java) |  |
+|Spring|  |  |  | [✍](https://github.com/MaeMaeGong/CS-Study/tree/main/StudyRecords/JH/Spring) |  |
 
 ## 🤝 Contributers
 <a href = "https://github.com/khoon-git">
