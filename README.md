@@ -10,11 +10,6 @@
 - 매주 수요일에 각자 조사한 내용을 통합해서 하나의 마크다운으로 정리하기
 - 매주 금요일에 공부한 내용을 바탕으로 질의응답 & 이후에 공부할 CS 주제 정하기
 
-## 💾 File Name
-- `이름_과목명.md`
-  - 진호_운영체제.md
-  - 병훈_자바&스프링.md
-
 ## ✅ Commit Message
 - `[Study] ✍ 이름_과목명_공부내용`
   - [Study] ✍ 진호_운영체제_스레드
@@ -24,7 +19,8 @@
 ## 📚 Study Schedule
 | Subject | 김경훈 | 김민수 | 김병훈 | 송진호 | 최종 |
 |:-------:|:---:|:---:|:---:|:---:|:---:|
-|Java + Spring|  |  |  | ✍ |  |
+|Java|  |  |  | ✍ |  |
+|Spring|  |  |  | ✍ |  |
 
 ## 🤝 Contributers
 <a href = "https://github.com/khoon-git">
