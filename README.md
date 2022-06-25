@@ -17,16 +17,16 @@
 
 ## 📆 1주차 (2022.06.27 ~ 2022.07.01)
 ### 월요일
-- Spring Framework
+- [**Spring Framework**](https://github.com/MaeMaeGong/CS-Study/blob/main/Spring/README.md)
   - DI (Dependency Injection)
   - IoC (Inversion of Control)
   - AOP (Aspect Oriented Programming)
 ### 수요일
-- Spring Framework
+- [**Spring Framework**](https://github.com/MaeMaeGong/CS-Study/blob/main/Spring/README.md)
   - Servlet MVC1 & Servlet MVC2
   - Spring MVC
 ### 금요일
-- Spring Framework
+- [**Spring Framework**](https://github.com/MaeMaeGong/CS-Study/blob/main/Spring/README.md)
   - JDBC & DBCP (HikariCP)
   - MyBatis
 
