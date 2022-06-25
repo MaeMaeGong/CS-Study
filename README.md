@@ -5,22 +5,30 @@
 
 ---
 
-## 👨‍💻 Manual
-- 주말부터 화요일까지 조사한 내용을 각자 `마크다운`으로 정리하기
-- 매주 수요일에 각자 조사한 내용을 통합해서 하나의 마크다운으로 정리하기
-- 매주 금요일에 공부한 내용을 바탕으로 질의응답 & 이후에 공부할 CS 주제 정하기
+## 👨‍💻 Study Manual
+- 매주 월, 수, 금에 조사한 내용을 각자 `마크다운`으로 정리해서 저장소에 올리기
+  - 각자 브랜치에서 `Add` & `Commit` & `Push` 후에 `Pull-Request` 보내서 `Merge`
+- 매주 화, 목, 토에 각자 공부한 내용을 바탕으로 질의응답 & 이후에 공부할 CS 주제 정하기
 
 ## ✅ Commit Message
-- `[Study] ✍ 이름_과목명_공부내용`
-  - [Study] ✍ 진호_운영체제_스레드
-  - [Study] ✍ 진호_운영체제_프로세스
-  - [Study] ✍ 진호_운영체제_가상메모리
+- `[Study] ✍ 이름 - 과목명(공부내용)`
+  - [Study] ✍ JH - Spring(HikariCP)
+  - [Study] ✍ JH - 운영체제(가상메모리)
 
-## 📚 Study Schedule
-| Subject | 김경훈 | 김민수 | 김병훈 | 송진호 | 최종 |
-|:-------:|:---:|:---:|:---:|:---:|:---:|
-|Java|  |  |  | [✍](https://github.com/MaeMaeGong/CS-Study/tree/main/StudyRecords/JH/Java) |  |
-|Spring|  |  |  | [✍](https://github.com/MaeMaeGong/CS-Study/tree/main/StudyRecords/JH/Spring) |  |
+## 📆 1주차 (2022.06.27 ~ 2022.07.01)
+### 월요일
+- Spring Framework
+  - DI (Dependency Injection)
+  - IoC (Inversion of Control)
+  - AOP (Aspect Oriented Programming)
+### 수요일
+- Spring Framework
+  - Servlet MVC1 & Servlet MVC2
+  - Spring MVC
+### 금요일
+- Spring Framework
+  - JDBC & DBCP (HikariCP)
+  - MyBatis
 
 ## 🤝 Contributers
 <a href = "https://github.com/khoon-git">
@@ -38,4 +46,4 @@
 
 ---
 
-@Copyright <a href = "https://github.com/sth4881">송진호</a>
+Made by <a href = "https://github.com/sth4881">송진호</a>
