@@ -11,7 +11,7 @@
 - 매주 화, 목, 토에 각자 공부한 내용을 바탕으로 질의응답 & 이후에 공부할 CS 주제 정하기
 
 ## ✅ Commit Message
-- `[Study] ✍ 이름 - 과목명(공부내용)`
+- `[Study] ✍ 과목명 - 공부내용`
   - [Study] ✍ 운영체제 - 가상메모리
   - [Study] ✍ Spring - DBCP(HikariCP)
 
