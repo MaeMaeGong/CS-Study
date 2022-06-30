@@ -13,23 +13,39 @@
 ## ✅ Commit Message
 - `[Study] ✍ 과목명 - 공부내용`
   - [Study] ✍ 운영체제 - 가상메모리
-  - [Study] ✍ Spring - DBCP(HikariCP)
-
+  - [Study] ✍ Spring - IoC, DI, AOP
 
 ## 📆 1주차 (2022.06.27 ~ 2022.07.01)
 ### 월요일
-- [**Spring Framework**](https://github.com/MaeMaeGong/CS-Study/blob/main/Spring/README.md)
-  - DI (Dependency Injection)
+- [**Spring Framework**](./Spring/README.md)
+  - 스프링 프레임워크의 개념 및 특징
   - IoC (Inversion of Control)
+  - DI (Dependency Injection)
   - AOP (Aspect Oriented Programming)
 ### 수요일
-- [**Spring Framework**](https://github.com/MaeMaeGong/CS-Study/blob/main/Spring/README.md)
-  - Servlet MVC1 & Servlet MVC2
-  - Spring MVC
+- [**Spring Framework**](./Spring/README.md)
+  - Spring MVC 구조 및 동작방식
+  - Spring vs Spring Boot
 ### 금요일
-- [**Spring Framework**](https://github.com/MaeMaeGong/CS-Study/blob/main/Spring/README.md)
-  - JDBC & DBCP (HikariCP)
-  - MyBatis
+- [**Java**](./Java/README.md)
+  - 객체 지향 개념 (상속, 추상화, 다형성, 캡슐화)
+  - JVM Architecture & Garbage Collector
+  - 자바 프로그램의 실행 과정
+  
+## 📆 2주차 (2022.07.04 ~ 2022.07.08)
+### 월요일
+- [**운영체제**](./운영체제/README.md)
+  - Chapter 03. 프로세스
+  - Chapter 04. 스레드와 병행성
+### 수요일
+- [**운영체제**](./운영체제/README.md)
+  - Chapter 05. CPU 스케줄링
+  - Chapter 06. 동기화 도구들
+  - Chapter 08. 교착상태
+### 금요일
+- [**운영체제**](./운영체제/README.md)
+  - Chapter 09. 메인 메모리
+  - Chapter 10. 가상 메모리
 
 ## 🤝 Contributers
 <a href = "https://github.com/khoon-git">
