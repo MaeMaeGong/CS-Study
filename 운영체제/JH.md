@@ -29,6 +29,7 @@
   - 자원을 할당받은 프로그램은 여러 개의 프로세스로 파생될 수 있으며 각각 인스턴스를 가진다.
 - **구성 요소**
 <img src="https://blog.kakaocdn.net/dn/Se5G2/btrGg0NmXKf/0YMyaRF2Z0duUfSvGlmpIK/img.png" />
+
   - **Stack**
     - 함수를 호출할 때마다 사용되는 데이터를 임시로 저장하는 공간이다.
     - Stack 영역은 위에서 아래 방향으로 데이터를 저장해나간다.
