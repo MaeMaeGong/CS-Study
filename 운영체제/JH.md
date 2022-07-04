@@ -27,8 +27,14 @@
   - 프로그램은 디스크 내에 저장된 실행 파일이다.
   - 프로세스는 메모리에 적재돼서 CPU의 시스템 자원을 할당받아 실행중인 프로그램을 말한다.
   - 자원을 할당받은 프로그램은 여러 개의 프로세스로 파생될 수 있으며 각각 인스턴스를 가진다.
+  
 - **구성 요소**
-<img src="https://blog.kakaocdn.net/dn/Se5G2/btrGg0NmXKf/0YMyaRF2Z0duUfSvGlmpIK/img.png" />
+  <details>
+  <summary>이미지</summary>
+  <div markdown="1">
+    <img src="https://blog.kakaocdn.net/dn/Se5G2/btrGg0NmXKf/0YMyaRF2Z0duUfSvGlmpIK/img.png" />
+  </div>
+  </details>
 
   - **Stack**
     - 함수를 호출할 때마다 사용되는 데이터를 임시로 저장하는 공간이다.
