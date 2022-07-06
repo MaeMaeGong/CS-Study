@@ -22,7 +22,7 @@
     - 프로세스는 영역을 서로 공유하지 않지만 스레드는 스택 영역을 제외한 데이터, 힙 영역을 공유하기 때문에 메모리 관리 측면에서 더 효율적이다.
 - **System Call**
 - **Interrupt**
-  
+
 ## 📕 About Process
 ### 프로세스
 - **개념**
@@ -117,9 +117,6 @@
     - 프로세스를 메모리에서 디스크로 쫓아내서 여유 공간을 마련하는 **Swapping** 작업을 담당한다.
 
 ## 📙 About Process Scheduling
-### Scheduling
-- **개념**
-
 ### **Non-Preemption Scheduling**
 - **개념**
 
@@ -143,12 +140,37 @@
       - 임계 영역에서 작업중인 프로세스가 없으면 임계 영역에 진입하려는 프로세스는 임계 영역에 접근할 수 있어야 한다.
     - **Bounded Waiting**
       - 프로세스가 임계 영역에 들어가기 위해 요청한 시점부터 요청이 허용될 때까지 다른 프로세스들이 임계 영역에 진입하는 횟수를 제한해야 한다.
-      - 다시 말해서 임계 영역에 진입하려는 프로세스가 무한정 기다리는 Starvation이 발생해서는 안된다.
-### Synchronization Tools
-- **Mutex**
-- **Semaphore**
+      - 다시 말해서 임계 영역에 진입하려는 프로세스가 무한정 기다리는 Starvation이 발생해서는 안된다는 뜻이다.
 
-### Classical Problems of Synchronization
+### Synchronization Tools
+- **Mutex (Mutual Exclusion)**
+  - 자원에 대한 접근을 동기화하기 위해 사용되는 상호 배제 기술이다.
+  - 한 번에 하나의 프로세스만 임계 영역에 진입할 수 있도록 하는 **Locking** 메커니즘을 따른다.
+    - 오직 자원을 획득해서 Lock을 걸은 스레드만 임계 영역을 빠져나갈 때 Lock을 해제할 수 있다.
+  - Spin-Lock과 달리 Busy Waiting 상태를 유지하지 않고 Sleep 상태로 들어간 후 WakeUp 상태로 바뀌면 다시 권한 획득을 시도하는 **Sleep Lock**을 사용한다.
+- **Spin-Lock**
+  - 임계 영역의 Lock이 풀려서 접근 권한을 얻을 때까지 루프를 돌면서 재시도하는 방식으로 구현된 Lock이다.
+  - Mutex와 동일하게 상태가 **Lock**과 **Unlock**만 존재하기 때문에 한 번에 하나의 컴포넌트만 접근할 수 있다.
+  - 임계 구역에 진입하기 전까지는 계속 루프를 돌고 있기 때문에 **Busy Waiting** 상태를 유지하게 된다.
+    - Busy Waiting은 작업을 수행하지 않고 자원을 사용하면서 계속 대기하는 상태를 말한다.
+  - Spin-Lock은 운영체제의 스케줄링 지원을 받지 않기 때문에 Context-Switching이 발생하지 않는다.
+    - 단일 CPU 환경에서는 Context-Switching이 발생하지 않으므로 멀티 프로세서 시스템에서만 사용된다.
+    - Context-Switching 비용이 들지 않기 때문에 단시간에 진입할 수 있으면 효율을 높일 수 있지만, 반대의 경우에는 다른 스레드에게 자원을 양보하지 않고 점유하기 때문에 처리 효율이 저하된다.
+- **Semaphore**
+  - **개념**
+    - 여러 프로세스 또는 스레드가 임계 영역에 진입할 수 있는 **Signaling** 메커니즘을 따른다.
+    - Mutex 또는 Spin-Lock과 달리 하나 이상의 스레드가 공유 자원에 접근하도록 만들 수 있다.
+    - 정수형으로 표현하기 때문에 Lock 또는 Unlock이 아닌 값을 증가시키고 감소시키는 방식을 사용한다.
+  - **종류**
+    - Binary Semaphore
+      - 정수 값으로 0과 1만 사용할 수 있으며 Mutex Lock과 동일한 역할을 수행한다.
+    - Counting Semaphore
+      - 정수 값의 범위가 0 이상으로 자원 개수에 제한이 없고, 주로 자원의 개수를 세는데 사용한다.
+      - 자원을 획득하면 Semaphore가 감소하고 해제하면 Semaphore가 증가한다.
+    
+- **Mutex vs Semaphore**
+  - Mutex는 오직 하나의 스레드만 접근할 수 있는 반면에 Semaphore는 여러 개의 스레드가 접근할 수 있다.
+  - Mutex는 자원을 획득하고 해제하는 주체가 반드시 동일해야 하지만 Semaphore는 현재 수행중인 스레드가 아닌 다른 스레드도 Signal을 통해서 Lock을 강제로 해제할 수 있다.
 
 ### Deadlock
 - **개념**
