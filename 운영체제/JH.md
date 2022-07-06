@@ -1,6 +1,6 @@
 # 🖥 운영체제
 
-## 📕 About Operation System
+## 📒 About Operation System
 ### 운영체제
 - **개념**
   - 운영체제는 컴퓨터 시스템의 자원들을 효율적으로 관리하는 시스템 소프트웨어이다.
@@ -20,22 +20,20 @@
     - 하나의 프로세스를 여러 개의 스레드로 구분해서 하나의 프로그램을 병렬 처리하는 것을 뜻한다.
     - 프로세스를 생성하는 비용보다 스레드를 생성하는 비용이 훨씬 적은 자원을 소모하기 때문에 자원 관리 측면에서 더 효율적이다.
     - 프로세스는 영역을 서로 공유하지 않지만 스레드는 스택 영역을 제외한 데이터, 힙 영역을 공유하기 때문에 메모리 관리 측면에서 더 효율적이다.
+- **System Call**
+- **Interrupt**
   
-## 📙 About Process
+## 📕 About Process
 ### 프로세스
 - **개념**
   - 프로그램은 디스크 내에 저장된 실행 파일이다.
   - 프로세스는 메모리에 적재돼서 CPU의 시스템 자원을 할당받아 실행중인 프로그램을 말한다.
   - 자원을 할당받은 프로그램은 여러 개의 프로세스로 파생될 수 있으며 각각 인스턴스를 가진다.
-  
-- **구성 요소**
-  <details>
-  <summary>이미지</summary>
-  <div markdown="1">
-    <img src="https://blog.kakaocdn.net/dn/Se5G2/btrGg0NmXKf/0YMyaRF2Z0duUfSvGlmpIK/img.png" />
-  </div>
-  </details>
 
+- **구조**
+<img src="https://blog.kakaocdn.net/dn/Se5G2/btrGg0NmXKf/0YMyaRF2Z0duUfSvGlmpIK/img.png">
+
+- **구성 요소**
   - **Stack**
     - 함수를 호출할 때마다 사용되는 데이터를 임시로 저장하는 공간이다.
     - Stack 영역은 위에서 아래 방향으로 데이터를 저장해나간다.
@@ -49,7 +47,6 @@
     - 실행 코드가 저장되는 공간이다.
     - 처음부터 크기가 고정되어 있으며, 프로세스를 실행하는 동안 바뀌지 않는다.
 
-- **Process State**
 - **PCB (Process Control Block)**
   - **개념**
     - PCB는 운영체제가 각 프로세스를 제어하고 관리하기 위한 프로세스의 상태 정보 저장공간이다.
@@ -63,9 +60,102 @@
     - I/O 상태 정보
     - 계정 정보
 - **Context Switching**
+  - **개념**
 
-### 스레드
+    <img src="https://blog.kakaocdn.net/dn/cuQMPg/btrGC8iiHDH/tqJ4UxDLOz8mCpwjAbOfs0/img.png">
 
-## 📗 About Concurrency Control
+    - 프로세스를 교환하는 작업 또는 PCB를 교환하는 작업을 의미한다.
+    - 프로세스에 할당된 시간을 모두 사용해서 **Timeout**이 발생했거나, **Interrupt**가 발생했을 때 이뤄진다.
+      - 처리기에 현재 프로세스가 아닌 다른 프로세스가 할당되는 경우에만 **Context Switching**이 발생한다.
+      - 따라서 **Interrupt**, **System Call**이 발생했다고 해서 반드시 **Context Switching**이 이뤄지는 것은 아니다.
+    - 스케줄러가 처리기에 다른 프로세스를 할당하려고 할 때, 현재 프로세스의 상태를 해당 프로세스의 PCB에 저장하고 새로운 프로세스의 PCB로 교체하는 방식이다.
+  - **Overhead**
+    - 오버헤드는 Context Switching에 사용된 시간과 메모리를 의미한다.
+    - Context Switching이 자주 발생할수록 오버헤드가 발생하기 때문에 성능이 저하된다.
+    - 프로세스 P0가 Excuting 상태에서 Idle 상태로 변경될 때, 프로세스 P1이 곧바로 Excuting 상태로 바뀌지 않고 Idle 상태에서 좀 더 머물러있다가 Excuting 상태로 변경된다.
+      - 프로세스 P0를 PCB에 저장하고, 프로세스 P1의 상태를 PCB에서 가져와야 하기 때문이다.
+      - 처리기는 PCB에 상태를 저장하고 가져올 때 어떠한 일도 수행할 수 없게 되고, 이런 상황이 자주 발생할수록 성능 저하로 이어지게 된다.
+  - **Process vs Thread**
+    - 스레드는 Stack 영역을 제외한 Code, Data, Heap 영역을 공유하기 때문에 Stack 영역만 교체해주면 되므로 사용되는 비용이 적다.
+    - 하지만 프로세스는 Code, Data, Heap, Stack 영역을 모두 교체해줘야하기 때문에 스레드에 비해서 사용되는 비용이 많다.
+
+- **프로세스 상태 전이 다이어그램**
+<img src="https://blog.kakaocdn.net/dn/4J1kG/btrGB3O7Zjm/A4KyWUnKHBkvtppbKdsrpK/img.png">
+
+- **프로세스 상태**
+  - **New**
+    - 프로세스가 처음 생성됨과 동시에 커널 공간에 PCB가 함께 생성된다.
+  - **Ready**
+    - 프로세스가 처리기에 할당될 때까지 기다리는 상태를 말한다.
+    - 메모리에 적재돼서 실행에 필요한 자원을 모두 얻은 상태이다.
+    - Ready 상태를 가지는 여러 개의 프로세스가 존재할 수도 있다.
+  - **Running**
+    - 프로세스가 처리기에 할당돼서 명령어를 실행중인 상태를 말한다.
+  - **Waiting**
+    - I/O 또는 이벤트가 발생할 때까지 기다리는 상태를 말한다.
+  - **Terminated**
+    - 프로세스의 실행이 완료되고 PCB를 파괴한다.
+
+- **프로세스 상태 전이**
+  - **Admitted (New → Ready)**
+
+  - **Schedular Dispatch (Ready → Running)**
+
+  - **Interrupt (Running → Ready)**
+
+  - **I/O or Event Wait (Running → Waiting)**
+
+  - **I/O or Event Completion (Waiting → Ready)**
+
+- **Schedular**
+  - **Short-Term Schedular (CPU Schedular)**
+    - 어떤 프로세스를 다음에 실행시킬지 선택하고 처리기에 프로세스를 할당한다.
+  - **Long-Term Schedular (Job Schedular)**
+    - 시작 프로세스 중에서 어떤 프로세스를 Ready Queue로 보낼지 결정하고, 프로세스에 메모리 및 각종 자원을 할당한다.
+    - Time-Shaing 시스템에서는 보통 장기 스케줄러 없이 무조건 Ready Queue에 추가하는 방식을 사용한다.
+  - **Medium-Term Schedular (Swapper)**
+    - 프로세스를 메모리에서 디스크로 쫓아내서 여유 공간을 마련하는 **Swapping** 작업을 담당한다.
+
+## 📙 About Process Scheduling
+### Scheduling
+- **개념**
+
+### **Non-Preemption Scheduling**
+- **개념**
+
+### **Preemption Scheduling**
+- **개념**
+
+## 📗 About Process Synchronization
+### Synchronization
+- **개념**
+  - 프로세스 간에 실행 순서 및 규칙을 정해서 데이터의 일관성을 보장하는 개념을 말한다.
+  - 공유 자원에 대한 동시 접근으로 인해 발생하는 데이터 불일치 문제를 막고 일관성을 유지하기 위해서 사용한다.
+- **Race Condition**
+  - 여러 개의 프로세스 또는 스레드가 데이터를 동시에 접근할 때, 어떤 순서로 데이터를 접근하는지에 따라 결과가 달라질 수 있는 상황을 경쟁 조건이라고 한다.
+- **Critical Section**
+  - **개념**
+    - 경쟁 조건이 공유 자원을 접근하는 코드가 존재하는 영역을 임계 구역이라고 한다.
+  - **해결 조건**
+    - **Mutual Exclusion**
+      - 하나의 프로세스가 임계 구역에서 작업중이면 다른 프로세스 임계 구역에 접근할 수 없어야 한다.
+    - **Progress**
+      - 임계 영역에서 작업중인 프로세스가 없으면 임계 영역에 진입하려는 프로세스는 임계 영역에 접근할 수 있어야 한다.
+    - **Bounded Waiting**
+      - 프로세스가 임계 영역에 들어가기 위해 요청한 시점부터 요청이 허용될 때까지 다른 프로세스들이 임계 영역에 진입하는 횟수를 제한해야 한다.
+      - 다시 말해서 임계 영역에 진입하려는 프로세스가 무한정 기다리는 Starvation이 발생해서는 안된다.
+### Synchronization Tools
+- **Mutex**
+- **Semaphore**
+
+### Classical Problems of Synchronization
+
+### Deadlock
+- **개념**
+  - 
+- **발생조건**
+  - 
+- **해결방법**
+  - 
 
 ## 📘 About Memory
