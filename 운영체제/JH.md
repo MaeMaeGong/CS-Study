@@ -117,10 +117,10 @@
     - 프로세스를 메모리에서 디스크로 쫓아내서 여유 공간을 마련하는 **Swapping** 작업을 담당한다.
 
 ## 📙 About Process Scheduling
-### **Non-Preemption Scheduling**
+### **비선점 스케줄링**
 - **개념**
 
-### **Preemption Scheduling**
+### **선점 스케줄링**
 - **개념**
 
 ## 📗 About Process Synchronization
@@ -192,8 +192,30 @@
     - 교착상태를 해결하기 위한 알고리즘으로 자원 할당 그래프 알고리즘과 은행원 알고리즘이 있다.
   - **탐지 & 회복 (Detection & Recovery)**
     - 시스템에 교착상태가 발생했는지 점검해서 교착상태에 있는 프로세스와 자원을 발견하고 교착상태를 일으킨 프로세스를 종료하거나 할당된 자원을 다른 프로세스에게 할당해서 해결하는 방식이다.
-  - **무시 (Ignorance)**
+- **교착상태 무시 (Ignorance)**
     - 교착상태가 발생하지 않는다고 가정하고 어떠한 조치도 취하지 않는 방식이다.
     - 교착상태에 의한 성능 저하보다 이를 해결하기 위한 Context-Switching으로 발생하는 오버헤드로 인해 성능 저하가 더 클 경우에 무시하는 방식이다.
 
-## 📘 About Memory
+## 📘 About Memory Management
+### Main Memory
+- **Contiguous Allocation**
+  - **Fixed Partitioning**
+    - **개념**
+      - 동일한 크기로 메모리를 분할해서 할당하는 방식이다.
+      - 분할 당 하나의 프로세스가 적재되기 때문에 메모리에 적재되는 프로세스의 수가 고정된다.
+    - **문제점**
+  - **Dynamic Partitioning**
+    - **개념**
+    - **배치 알고리즘**
+      - First-Fit
+      - Best-Fit
+      - Worst-Fit
+    - **문제점**
+
+- **Non-Contiguous Allocation**
+  - Paging
+  - Segmentation
+
+### Virtual Memory
+
+### Cache Memory
