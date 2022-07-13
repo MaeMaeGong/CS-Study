@@ -56,8 +56,14 @@
   - Chapter 10. 가상 메모리
 ### 수요일
 - [**데이터베이스**](./데이터베이스/README.md)
+  - Chapter 01. 데이터베이스 기본 개념
+  - Chapter 02. 데이터베이스 관리 시스템 (DBMS)
+  - Chapter 03. 데이터베이스 시스템
 ### 금요일
 - [**데이터베이스**](./데이터베이스/README.md)
+  - Chapter 04. 데이터 모델링
+  - Chapter 05. 관계 데이터 모델
+  - Chapter 06. 관계 데이터 연산
 
 ## 🤝 Contributers
 <a href = "https://github.com/khoon-git">
